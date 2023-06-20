@@ -95,7 +95,9 @@ def set_forces_matrix(x,y,node):
             all_set += 1
         
     if all_set == n_forces:
-        print(forces)
+        btn_calculate = ctk.CTkButton(containerframe, text='Calcular', command = lambda: tc.calculadora_trelica(nodes_coords, links, supports, forces))
+        btn_calculate.grid(row=9+n_nodes+n_links+n_supports+n_forces,column=2, columnspan=2,sticky='nsew') 
+        
 
 def get_forces():
     ctk.CTkLabel (containerframe , text = "Fx(em N)",text_color='white').grid(row=8+n_nodes+n_links+n_supports,column=2,sticky='nsew')
