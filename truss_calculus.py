@@ -43,49 +43,48 @@ def calculadora_trelica(nodes_coords, links, supports, forces):
     print(nodes)
     print(elements)
 
-    plt.figure(1,figsize=(12,4.5))
 
-    # Plotagem dos apoios e das forças
-    for no in range(n_nos):
-        x, y, fx, fy, rx, ry = nodes[no].values()
+    # # Plotagem dos apoios e das forças
+    # for no in range(n_nos):
+    #     x, y, fx, fy, rx, ry = nodes[no].values()
 
-        # Desenhando rotulas
-        plt.scatter(x, y, s=50, color='black', marker="o")
+    #     # Desenhando rotulas
+    #     plt.scatter(x, y, s=50, color='black', marker="o")
         
-        # 6 é restrição vertical e 5 na horizontal
-        if rx == 1:
-            plt.scatter(x,y,s=200,marker =5,color ='blue')
-        if ry == 1:
-            plt.scatter(x,y,s=200,marker =6,color ='blue')
+    #     # 6 é restrição vertical e 5 na horizontal
+    #     if rx == 1:
+    #         plt.scatter(x,y,s=200,marker =5,color ='blue')
+    #     if ry == 1:
+    #         plt.scatter(x,y,s=200,marker =6,color ='blue')
 
-        if fx >0:
-            plt.arrow(x-1.5,y,1,0,width =0.05,color='r')
-            plt.text(x-1.5,y,'{:.2f}kN'.format(fx/1000),va='bottom')
-        if fx <0:
-            plt.arrow(x+1.5,y,-1,0,width =0.05,color='r')
-            plt.text(x+.5,y,'{:.2f}kN'.format(fx/1000),va='bottom')
-        if fy >0:
-            plt.arrow(x,y-1.5,0,1,width =0.05,color='r')
-            plt.text(x,y,'{:.2f}kN'.format(fy/1000),va='bottom',rotation=90)
-        if fy <0:
-            plt.arrow(x,y+1.5,0,-1,width =0.05,color='r')
-            plt.text(x,y+.5,'{:.2f}kN'.format(fy/1000),ha='right',rotation=90)
+    #     if fx >0:
+    #         plt.arrow(x-1.5,y,1,0,width =0.05,color='r')
+    #         plt.text(x-1.5,y,'{:.2f}kN'.format(fx/1000),va='bottom')
+    #     if fx <0:
+    #         plt.arrow(x+1.5,y,-1,0,width =0.05,color='r')
+    #         plt.text(x+.5,y,'{:.2f}kN'.format(fx/1000),va='bottom')
+    #     if fy >0:
+    #         plt.arrow(x,y-1.5,0,1,width =0.05,color='r')
+    #         plt.text(x,y,'{:.2f}kN'.format(fy/1000),va='bottom',rotation=90)
+    #     if fy <0:
+    #         plt.arrow(x,y+1.5,0,-1,width =0.05,color='r')
+    #         plt.text(x,y+.5,'{:.2f}kN'.format(fy/1000),ha='right',rotation=90)
 
 
-    # Plotagem das barras
-    for barra in range(n_ele):
-        # Vamos passar os nós para as variáveis N1 e N2
-        N1 = elements[barra]['n1']
-        N2 = elements[barra]['n2']
-        # Agora vamos acessar as coordendas de cada um dos nós
-        x1 = nodes[N1-1]['x']
-        y1 = nodes[N1-1]['y']
-        x2 = nodes[N2-1]['x']
-        y2 = nodes[N2-1]['y']
-        x = np.array([x1,x2])
-        y = np.array([y1,y2])
+    # # Plotagem das barras
+    # for barra in range(n_ele):
+    #     # Vamos passar os nós para as variáveis N1 e N2
+    #     N1 = elements[barra]['n1']
+    #     N2 = elements[barra]['n2']
+    #     # Agora vamos acessar as coordendas de cada um dos nós
+    #     x1 = nodes[N1-1]['x']
+    #     y1 = nodes[N1-1]['y']
+    #     x2 = nodes[N2-1]['x']
+    #     y2 = nodes[N2-1]['y']
+    #     x = np.array([x1,x2])
+    #     y = np.array([y1,y2])
         
-        plt.plot(x,y,'black')
+    #     plt.plot(x,y,'black')
 
     # plt.show()
         #plt.grid(True)
@@ -233,7 +232,7 @@ def calculadora_trelica(nodes_coords, links, supports, forces):
     print(R)
 
     # Desenhando a estrutura
-    plt.figure(3, figsize=(12,4.5))
+    plt.figure(1, figsize=(12,4.5))
 
     for barra in range(n_ele): 
         # Nós que compõem as barras
@@ -337,7 +336,7 @@ def calculadora_trelica(nodes_coords, links, supports, forces):
         
 
     # Plotando esforços nas barras
-    plt.figure(5, figsize=(16,9), dpi=70)
+    plt.figure(2, figsize=(16,9), dpi=70)
     plt.title('Esforços axiais em kN')
 
     print(elements)

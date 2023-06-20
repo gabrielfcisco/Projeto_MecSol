@@ -128,7 +128,7 @@ def get_forces():
         force_node[i] = ctk.CTkEntry(containerframe)
         force_node[i].grid(row=9+n_nodes+n_links+n_supports+i,column=4,sticky='nsew')
     
-    btn_getforces = ctk.CTkButton(containerframe, text='Inserir Apoios', command = lambda: set_forces_matrix(force_x, force_y,force_node))
+    btn_getforces = ctk.CTkButton(containerframe, text='Inserir Forças', command = lambda: set_forces_matrix(force_x, force_y,force_node))
     btn_getforces.grid(row=9+n_nodes+n_links+n_supports+n_forces,column=2, columnspan=2,sticky='nsew') 
 
 def set_supports_matrix(x,y,node):
