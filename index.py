@@ -2,6 +2,7 @@ import math
 import numpy
 import tkinter        as tk
 import customtkinter  as ctk 
+import truss_calculus as tc
 
 #________________________________________________________________________________________________________________________________
 window = ctk.CTk()                  # Cria a nossa janela de coleta de dados
